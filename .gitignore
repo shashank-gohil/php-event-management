@@ -1,0 +1,38 @@
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# IDE and editor files
+.idea/
+.vscode/
+*.sublime-project
+*.sublime-workspace
+
+# PHP files
+vendor/
+composer.phar
+*.log
+logs/
+*.swp
+
+# Temporary files
+tmp/
+temp/
+*.tmp
+*.bak
+*.swp
+
+# Sensitive configuration files
+.env
+config/auth.php
+
+# User uploaded content
+/uploads/
+
+# Cache files
+cache/ 

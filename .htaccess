@@ -1,0 +1,43 @@
+# Enable rewriting
+RewriteEngine On
+
+# Set default directory index
+DirectoryIndex index.php
+
+# Handle API requests
+RewriteRule ^api(/.*)?$ src/api/index.php [L,QSA]
+
+# Deny access to sensitive files
+<FilesMatch "^(\.htaccess|\.gitignore|admins\.json)$">
+    Order Allow,Deny
+    Deny from all
+</FilesMatch>
+
+# PHP settings
+<IfModule mod_php7.c>
+    php_flag display_errors Off
+    php_value max_execution_time 60
+    php_value max_input_time 60
+    php_value max_input_vars 1000
+    php_value memory_limit 128M
+    php_value post_max_size 8M
+    php_value upload_max_filesize 2M
+    php_flag session.cookie_httponly On
+</IfModule>
+
+# Security headers
+<IfModule mod_headers.c>
+    Header set X-Content-Type-Options "nosniff"
+    Header set X-XSS-Protection "1; mode=block"
+    Header set X-Frame-Options "SAMEORIGIN"
+    Header set Referrer-Policy "strict-origin-when-cross-origin"
+</IfModule>
+
+# Enable CORS for the API
+<IfModule mod_headers.c>
+    <FilesMatch "^(api\.php|src/api/.*)$">
+        Header set Access-Control-Allow-Origin "*"
+        Header set Access-Control-Allow-Methods "GET, POST, PUT, DELETE, OPTIONS"
+        Header set Access-Control-Allow-Headers "Content-Type, Authorization"
+    </FilesMatch>
+</IfModule> 

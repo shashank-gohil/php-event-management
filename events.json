@@ -1,0 +1,23 @@
+[
+    {
+        "id": 1,
+        "name": "Team Meeting",
+        "date": "Monday, April 24, 2023 - 10:00 AM",
+        "description": "Weekly team sync to discuss project progress and upcoming milestones. All team members are required to attend.",
+        "link": "https:\/\/meet.google.com\/abc-defg-hij"
+    },
+    {
+        "id": 2,
+        "name": "Training Session",
+        "date": "Wednesday, April 26, 2023 - 2:00 PM",
+        "description": "PHP Development best practices training session hosted by the senior development team. Open to all developers.",
+        "link": "https:\/\/meet.google.com\/klm-nopq-rst"
+    },
+    {
+        "id": 3,
+        "name": "Client Presentation",
+        "date": "Friday, April 28, 2023 - 11:00 AM",
+        "description": "Presentation of new features to the client. Project managers and lead developers should attend.",
+        "link": "https:\/\/meet.google.com\/uvw-xyz-123"
+    }
+]
